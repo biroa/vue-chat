@@ -8,8 +8,8 @@
         <div id="app">
             <h1>Chatroom</h1>
             <chat-message></chat-message>
-            {{--<chat-log></chat-log>--}}
-            {{--<chat-composer></chat-composer>--}}
+            <chat-log></chat-log>
+            <chat-composer></chat-composer>
         </div>
 
         <script src="js/app.js" charset="utf-8"></script>
