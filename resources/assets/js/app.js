@@ -9,6 +9,7 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -39,7 +40,8 @@ const app = new Vue({
         }
     },
     created(){
-        axios.get('/messages').then(response => {
+        console.log('AGHHHHHH');
+         axios.get('/messages').then(function (response){
             console.log(response);
         });
     }
