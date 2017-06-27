@@ -1,18 +1,13 @@
 <template lang="html">
 	<div>
-		<p>{{ message }}</p>
-		<small>{{ name }}</small>
+		<p>{{ message.message }}</p>
+		<small>{{ message.user }}</small>
 	</div>
 </template>
 
 <script>
     export default{
-        data(){
-            return{
-                message: "test",
-	            name: "Johny Bravo"
-            }
-        }
+		props:['message']
     }
 </script>
 

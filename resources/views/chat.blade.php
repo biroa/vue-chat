@@ -7,8 +7,9 @@
     <body>
         <div id="app">
             <h1>Chatroom</h1>
-            <chat-message></chat-message>
+            {{--Chat Messages list  --}}
             <chat-log></chat-log>
+            {{--Input where we generate the content--}}
             <chat-composer></chat-composer>
         </div>
 
