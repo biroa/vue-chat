@@ -36,11 +36,10 @@ const app = new Vue({
         ]
     },
     created(){
-        console.log('AGHHHHHH');
-         // Issue with axios??
-        // axios.get('/messages').then(function (response){
-        //     console.log(response);
-        // });
+        axios.get('/messages').then(response =>{
+             console.log(response);
+            }
+        );
     },
     methods:{
         addMessage(message){
