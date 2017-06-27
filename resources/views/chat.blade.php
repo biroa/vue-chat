@@ -8,9 +8,9 @@
         <div id="app">
             <h1>Chatroom</h1>
             {{--Chat Messages list  --}}
-            <chat-log></chat-log>
+            <chat-log :messages="messages"></chat-log>
             {{--Input where we generate the content--}}
-            <chat-composer></chat-composer>
+            <chat-composer v-on:messagesent="addMessage"></chat-composer>
         </div>
 
         <script src="js/app.js" charset="utf-8"></script>
