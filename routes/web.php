@@ -14,11 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+//Use the middleware auth to authenticate
 Route::get('/chat', function () {
     return view('chat');
-});
+})->middleware('auth');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/messages', function(){
+    return App\Message::with('users')->get();
+})->middleware('auth');
