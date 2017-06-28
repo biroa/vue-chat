@@ -8,6 +8,9 @@
     <body>
         <div id="app">
             <h1>Chatroom</h1>
+            <span class="badge pull-right">
+                @{{usersInRoom.length}}
+            </span>
             {{--Chat Messages list  --}}
             <chat-log :messages="messages"></chat-log>
             {{--Input where we generate the content--}}
