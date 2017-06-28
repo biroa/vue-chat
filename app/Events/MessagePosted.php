@@ -15,7 +15,7 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 // Enable this all event broadcasting
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class MessagePosted
+class MessagePosted implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -45,7 +45,7 @@ class MessagePosted
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+        return new PresenceChannel('chatroom');
     }
 }
 

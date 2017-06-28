@@ -31,6 +31,14 @@ const app = new Vue({
              this.messages = response.data;
             }
         );
+
+        Echo.join('chatroom')
+            .here()
+            .joining()
+            .leaving()
+            .listen('MessagePosted',(e) => {
+                console.log(e);
+            });
     },
     methods:{
         addMessage(message){
