@@ -2113,9 +2113,9 @@ window._ = __webpack_require__(41);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(40);
+    window.$ = window.jQuery = __webpack_require__(40);
 
-  __webpack_require__(36);
+    __webpack_require__(36);
 } catch (e) {}
 
 /**
@@ -2137,9 +2137,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
 /**
@@ -2150,12 +2150,12 @@ if (token) {
 
 // import Echo from 'laravel-echo'
 
-// window.Pusher = require('pusher-js');
+window.Pusher = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"pusher-js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
-// });
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: '2c1fbee1dad764d97564'
+});
 
 /***/ }),
 /* 36 */
