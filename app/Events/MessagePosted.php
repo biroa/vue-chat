@@ -33,12 +33,6 @@ class MessagePosted
      */
     public $user;
 
-    /**
-     * Create a new event instance.
-     *
-     * @param Message $message
-     * @param User $user
-     */
     public function __construct(Message $message, User $user)
     {
         $this->message = $message;
@@ -54,3 +48,4 @@ class MessagePosted
         return new PrivateChannel('channel-name');
     }
 }
+
