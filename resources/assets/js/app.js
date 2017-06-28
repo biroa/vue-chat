@@ -37,22 +37,22 @@ const app = new Vue({
             .here((users) =>{
                 this.usersInRoom = users;
             })
-            // .joining()
-            // .leaving()
-            .listen('MessagePosted',(e) => {
-                console.log(e);
-                this.messages.push(
-                    {
-                        message:e.message.message,
-                        user:e.user
-                    }
-                )
+            .listen('MessagePosted', (e) => {
+                console.log(e)
+                this.messages.push({
+                    message: e.message.message,
+                    user: e.user
+                });
             });
     },
     methods:{
         addMessage(message){
+            //Existing messages
             this.messages.push(message);
-            axios.post('/messages', message)
+            //
+            axios.post('/messages', message).then(response => {
+                // Do whatever;
+            })
         }
     }
 });
