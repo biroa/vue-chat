@@ -25,7 +25,7 @@
                     {
                         message: this.messageText,
 	                    user: {
-                            name: "Adam Biro"
+                            name: $('.navbar-right .dropdown-toggle').text()
 	                    }
                     });
 		        this.messageText = '';
