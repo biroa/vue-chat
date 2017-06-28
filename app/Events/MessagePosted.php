@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Message;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 // Broadcast events in a private way to the frontend [not all users can subscribe]
@@ -18,13 +19,20 @@ class MessagePosted
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     /**
+     * Message
+     *
+     * @var Message
+     */
+    public $message;
+
+    /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Message $message)
     {
-        //
+        $this->message = $message;
     }
 
     /**

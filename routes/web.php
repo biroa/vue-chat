@@ -29,10 +29,7 @@ Route::get('/messages', function(){
     return App\Message::with('user')->get();
 })->middleware('auth');
 
-Route::post(/**
- * @return array
- */
-    function(){
+Route::post('/messages', function(){
     $user = Auth::user();
     $user->messages()->create([
         'message' => request()->get('message')
@@ -43,4 +40,4 @@ Route::post(/**
 
     return ['status' => 'OK'];
 
-}, '/messages')->middleware('auth');
+})->middleware('auth');
