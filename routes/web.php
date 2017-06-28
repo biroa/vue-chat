@@ -26,3 +26,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/messages', function(){
     return App\Message::with('user')->get();
 })->middleware('auth');
+
+Route::post('/messages', function(){
+    $user = Auth::user();
+    $user->messages()->create([
+        'message' => request()->get('message')
+    ]);
+
+    return ['status' => 'OK'];
+
+})->middleware('auth');
